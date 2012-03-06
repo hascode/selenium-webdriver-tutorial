@@ -51,5 +51,6 @@ public class RemoteDriverTest {
 		assertNotNull(screenshot);
 		assertTrue(screenshot.exists());
 		assertTrue(Files.toByteArray(screenshot).length > 0);
+		driver.close();
 	}
 }
