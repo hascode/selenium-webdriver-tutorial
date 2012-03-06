@@ -25,11 +25,13 @@ public class WebpageTest {
 
 	@Test
 	public void testGetTitle() {
-		driver.get("http://www.hascode.com/");
-		assertEquals("hasCode.com", driver.getTitle());
-		WebElement searchBox = driver.findElement(By.id("s"));
-		searchBox.sendKeys("ejb");
+		driver.get("http://www.dzone.com/links/index.html");
+		assertEquals("dzone.com - fresh links for developers",
+				driver.getTitle());
+		WebElement searchBox = driver.findElement(By.id("mh_searchQuery"));
+		searchBox.sendKeys("message driven beans");
 		searchBox.submit();
-		assertEquals("hasCode.com » Search Results » ejb", driver.getTitle());
+		assertEquals("Search Results For: message driven beans",
+				driver.getTitle());
 	}
 }
